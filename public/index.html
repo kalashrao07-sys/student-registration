@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Registration</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <h1>Student Registration</h1>
+
+  <form id="studentForm">
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required />
+    </div>
+
+    <div class="form-group">
+      <label for="course">Course</label>
+      <input type="text" id="course" placeholder="e.g. B.E. CSE" required />
+    </div>
+
+    <div class="form-group">
+      <label for="year">Year</label>
+      <select id="year" required>
+        <option value="">Select Year</option>
+        <option value="1st Year">1st Year</option>
+        <option value="2nd Year">2nd Year</option>
+        <option value="3rd Year">3rd Year</option>
+        <option value="4th Year">4th Year</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" required />
+    </div>
+
+    <input type="hidden" id="studentId" />
+
+    <button type="submit" id="submitBtn">Register Student</button>
+    <button type="button" id="cancelEditBtn" class="secondary hidden">Cancel Edit</button>
+  </form>
+
+  <div id="message" class="message hidden"></div>
+
+  <h2>Registered Students</h2>
+  <div class="table-wrapper">
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Course</th>
+          <th>Year</th>
+          <th>DOB</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentsBody">
+        <!-- rows injected by script.js -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

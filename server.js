@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // API routes
 app.use('/api/students', studentRoutes);
 
-// Health check (useful for Render)
+// Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', dbState: mongoose.connection.readyState });
 });
@@ -28,7 +28,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Connect to MongoDB, then start server
 mongoose
   .connect(MONGO_URI)
   .then(() => {

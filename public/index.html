@@ -3,14 +3,44 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Student Registration</title>
+<title>Dashboard - Student Registration</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="container">
-  <h1>Student Registration</h1>
+<nav class="navbar">
+  <span class="navbar-title">Student Portal</span>
+  <div class="navbar-right">
+    <span id="welcomeText"></span>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+  </div>
+</nav>
 
+<div class="container">
+  <h1>Registered Students</h1>
+
+  <div id="message" class="message hidden"></div>
+
+  <div class="table-wrapper">
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Course</th>
+          <th>Year</th>
+          <th>DOB</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentsBody">
+        <!-- rows injected by script.js -->
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Edit My Profile</h2>
   <form id="studentForm">
     <div class="form-group">
       <label for="fullName">Full Name</label>
@@ -50,31 +80,9 @@
 
     <input type="hidden" id="studentId" />
 
-    <button type="submit" id="submitBtn">Register Student</button>
-    <button type="button" id="cancelEditBtn" class="secondary hidden">Cancel Edit</button>
+    <button type="submit" id="submitBtn">Update My Profile</button>
+    <button type="button" id="deleteAccountBtn" class="danger">Delete My Account</button>
   </form>
-
-  <div id="message" class="message hidden"></div>
-
-  <h2>Registered Students</h2>
-  <div class="table-wrapper">
-    <table id="studentsTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Course</th>
-          <th>Year</th>
-          <th>DOB</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="studentsBody">
-        <!-- rows injected by script.js -->
-      </tbody>
-    </table>
-  </div>
 </div>
 
 <script src="script.js"></script>

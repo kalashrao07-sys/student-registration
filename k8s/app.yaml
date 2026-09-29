@@ -12,6 +12,13 @@ spec:
       labels:
         app: student-app
     spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: student-app
       containers:
         - name: student-app
           image: student-app:1.0
